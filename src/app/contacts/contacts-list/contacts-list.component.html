@@ -1,0 +1,71 @@
+<div class="table-container p-2">
+  <mat-form-field class="w-50">
+    <input
+      matInput
+      (keyup)="applyFilter($event.target.value)"
+      placeholder="Filtro"
+    />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" matSort>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Nome
+      </th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.name }}
+      </td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        E-mail
+      </th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.email }}
+      </td>
+    </ng-container>
+
+    <!-- Phone Column -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>
+        Telefone
+      </th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.phone }}
+      </td>
+    </ng-container>
+
+    <!-- Address Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>
+        Endereço
+      </th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.address }}
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef class="action-header">
+        Ações
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <div class="d-flex align-items-center">
+          <button mat-icon-button (click)="edit(row)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="delete(row)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,0 +1,72 @@
+<h1 mat-dialog-title>
+  {{ contact.id ? "Editar Contato" : "Novo Contato" }}
+</h1>
+<div mat-dialog-content>
+  <form #contactForm="ngForm">
+    <mat-form-field class="w-100">
+      <input
+        matInput
+        type="text"
+        placeholder="Nome"
+        name="name"
+        required
+        #name="ngModel"
+        [(ngModel)]="contact.name"
+      />
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors.required">
+          Campo obrigatório
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <input
+        matInput
+        type="text"
+        placeholder="E-mail"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        name="email"
+        required
+        #email="ngModel"
+        [(ngModel)]="contact.email"
+      />
+      <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors.required">
+          Campo obrigatório
+        </div>
+        <div *ngIf="email.errors.pattern">
+          Campo inválido
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <input
+        matInput
+        type="tel"
+        placeholder="Telefone"
+        name="phone"
+        #phone="ngModel"
+        [(ngModel)]="contact.phone"
+      />
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <input
+        matInput
+        type="tel"
+        placeholder="Endereço"
+        name="address"
+        #address="ngModel"
+        [(ngModel)]="contact.address"
+      />
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="mt-3 mb-2">
+  <button
+    mat-raised-button
+    (click)="onConfirm()"
+    [disabled]="!contactForm.valid"
+  >
+    Salvar
+  </button>
+</div>

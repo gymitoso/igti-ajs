@@ -1,27 +1,28 @@
-# Ajs
+# IGTI - Arquitetura Javascript
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+Um simples CRUD de exemplo utilizando Angular e Json Server.
 
-## Development server
+## Tecnologias
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Angular - [Site oficial](https://angular.io/)
+- Angular CLI - [Site oficial](https://cli.angular.io/) e verifique também a página com seu [overview](https://angular.io/cli)
+- Angular Material - [Site oficial](https://material.angular.io/)
+- Json Server - [Site oficial](https://github.com/typicode/json-server)
 
-## Code scaffolding
+## Instalação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para instalar as dependências rode o comando a seguir na pasta da aplicação:
 
-## Build
+```bash
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Rodando a aplicação
 
-## Running unit tests
+Para rodar a aplicação:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm start
+```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+A aplicação estará disponível em [http://localhost:4200](http://localhost:4200) e a api em [http://localhost:3000](http://localhost:3000)

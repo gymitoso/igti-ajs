@@ -1,0 +1,11 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Contato IGTI",
+      "email": "contato@igti.com",
+      "phone": "0800 200 4488",
+      "address": "Rua Roma, nº 561, Santa Lúcia"
+    }
+  ]
+}

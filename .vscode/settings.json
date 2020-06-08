@@ -1,0 +1,15 @@
+{
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "ms-vscode.vscode-typescript-tslint-plugin",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.tslint": true
+    }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
