@@ -20,12 +20,27 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { ContactsComponent } from './contacts/contacts.component';
 import { ContactsListComponent } from './contacts/contacts-list/contacts-list.component';
 import { ContactsFormComponent } from './contacts/contacts-form/contacts-form.component';
 import { ContactsService } from './contacts/contacts.service';
 
+import { BooksComponent } from './books/books.component';
+import { BooksListComponent } from './books/books-list/books-list.component';
+import { BooksFormComponent } from './books/books-form/books-form.component';
+import { BooksService } from './books/books.service';
+
 @NgModule({
-  declarations: [AppComponent, ContactsListComponent, ContactsFormComponent],
+  declarations: [
+    AppComponent,
+    ContactsListComponent,
+    ContactsFormComponent,
+    ContactsComponent,
+    BooksComponent,
+    BooksListComponent,
+    BooksFormComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -51,6 +66,7 @@ import { ContactsService } from './contacts/contacts.service';
   ],
   providers: [
     ContactsService,
+    BooksService,
   ],
   bootstrap: [AppComponent],
 })

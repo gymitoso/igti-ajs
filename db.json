@@ -7,5 +7,14 @@
       "phone": "0800 200 4488",
       "address": "Rua Roma, nº 561, Santa Lúcia"
     }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Programação Avançada",
+      "author": "Bill Gates",
+      "publisher": "Microsoft",
+      "field": "TI"
+    }
   ]
 }

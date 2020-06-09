@@ -1,0 +1,12 @@
+<mat-toolbar class="toolbar mat-elevation-z1">
+  <span class="ml-3" routerLink="/books" style="cursor: pointer;">
+    Cadastro de Livros
+  </span>
+  <span style="flex-grow: 1;"></span>
+  <button class="mr-3" mat-raised-button (click)="openBookForm({})">
+    Adicionar Livro
+  </button>
+</mat-toolbar>
+<div class="container mt-4 pt-3">
+  <app-books-list (openEditModal)="openBookForm($event)"></app-books-list>
+</div>

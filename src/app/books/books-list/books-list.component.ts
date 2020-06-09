@@ -4,16 +4,16 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { ContactsService } from '../contacts.service';
+import { BooksService } from '../books.service';
 
-const COLUMNS_DEFAULT = ['name', 'email', 'phone', 'address', 'actions'];
+const COLUMNS_DEFAULT = ['title', 'author', 'publisher', 'field', 'actions'];
 
 @Component({
-  selector: 'app-contacts-list',
-  templateUrl: './contacts-list.component.html',
-  styleUrls: ['./contacts-list.component.scss']
+  selector: 'app-books-list',
+  templateUrl: './books-list.component.html',
+  styleUrls: ['./books-list.component.scss']
 })
-export class ContactsListComponent implements OnInit, OnDestroy {
+export class BooksListComponent implements OnInit, OnDestroy {
   private ngUnsubscribe$ = new Subject();
 
   displayedColumns: string[] = COLUMNS_DEFAULT;
@@ -25,15 +25,15 @@ export class ContactsListComponent implements OnInit, OnDestroy {
   @Output() openDeleteModal = new EventEmitter<any>();
 
   constructor(
-    private contactsService: ContactsService,
+    private booksService: BooksService,
   ) { }
 
   ngOnInit(): void {
-    this.contactsService.contactList$
+    this.booksService.bookList$
       .pipe(takeUntil(this.ngUnsubscribe$))
-      .subscribe(contactss => this.initDataSource(contactss));
+      .subscribe(bookss => this.initDataSource(bookss));
 
-    this.loadContacts();
+    this.loadBooks();
   }
 
   ngOnDestroy() {
@@ -41,9 +41,9 @@ export class ContactsListComponent implements OnInit, OnDestroy {
     this.ngUnsubscribe$.complete();
   }
 
-  loadContacts() {
-    this.contactsService
-      .loadContacts()
+  loadBooks() {
+    this.booksService
+      .loadBooks()
       .subscribe();
   }
 
@@ -61,11 +61,11 @@ export class ContactsListComponent implements OnInit, OnDestroy {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  edit(contact) {
-    this.openEditModal.emit(contact);
+  edit(book) {
+    this.openEditModal.emit(book);
   }
 
-  delete(contact) {
-    this.contactsService.delete(contact).subscribe();
+  delete(book) {
+    this.booksService.delete(book).subscribe();
   }
 }

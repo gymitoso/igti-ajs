@@ -26,3 +26,8 @@ npm start
 ```
 
 A aplicação estará disponível em [http://localhost:4200](http://localhost:4200) e a api em [http://localhost:3000](http://localhost:3000)
+
+## CRUDS
+
+- Agenda - Crud de contatos presente no endpoint [/contacts](http://localhost:4200/contacts)
+- Livraria - Crud de livros presente no endpoint [/books](http://localhost:4200/books)

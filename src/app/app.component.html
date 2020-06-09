@@ -1,14 +1,1 @@
-<mat-toolbar class="toolbar mat-elevation-z1">
-  <span class="ml-3" routerLink="/" style="cursor: pointer;">
-    Agenda
-  </span>
-  <span style="flex-grow: 1;"></span>
-  <button class="mr-3" mat-raised-button (click)="openContactForm({})">
-    Adicionar Contato
-  </button>
-</mat-toolbar>
-<div class="container mt-4 pt-3">
-  <app-contacts-list
-    (openEditModal)="openContactForm($event)"
-  ></app-contacts-list>
-</div>
+<router-outlet></router-outlet>
